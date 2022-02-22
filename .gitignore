@@ -1,0 +1,21 @@
+# vim backup files
+*~
+*.swp
+*.bak
+*.tmp
+
+# build files
+clockres.o
+/clockres
+
+# Debian build files
+*.log
+*.substvars
+debian/debhelper-build-stamp
+debian/files
+/debian/.debhelper/
+/debian/clockres/
+
+# RPM build files
+*.rpm
+
