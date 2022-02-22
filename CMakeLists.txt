@@ -10,6 +10,10 @@ project(cmake-demo VERSION 0.0.1 LANGUAGES C)
 # we always build shared libraries
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 
+# this is overridden by RPM build on CentOS and Fedora
+set(LIB_INSTALL_DIR "lib" CACHE PATH "Default install dir for libraries.")
+message("*** LIB_INSTALL_DIR='${LIB_INSTALL_DIR}'")
+
 # simplified boilerplate from CMake presentation
 set(default_build_type "Release")
 if(NOT CMAKE_BUILD_TYPE)
@@ -32,5 +36,5 @@ target_link_libraries(demoapp PUBLIC demolib)
 
 ### INSTALL SECTION ###
 install(TARGETS demoapp DESTINATION bin)
-install(TARGETS demolib DESTINATION lib)
+install(TARGETS demolib DESTINATION "${LIB_INSTALL_DIR}")
 
