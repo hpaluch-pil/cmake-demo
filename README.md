@@ -49,7 +49,10 @@ RPMS are created in folder `/tmp/tito` including `/tmp/tito/x86_64`.
 
 Always validate spec file with:
 ```bash
+# for CentOS 7
 rpmlint -i cmake-demo.spec
+# for Fedora 35
+rpmlint -v cmake-demo.spec
 ```
 
 
