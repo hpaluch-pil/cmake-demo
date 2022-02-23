@@ -12,7 +12,9 @@ Source0:        %{name}-%{version}.tar.gz
 #BuildArch:      x86_64
 
 BuildRequires:  gcc make
-%if %{defined cmake3}
+# NOTE: We can't test if 'cmake3' because it is defined even in Fedora 35!!
+#       However '__cmake3' is defined under CentOS 7 only
+%if %{defined __cmake3}
 # on CentOS7 we have to use:
 BuildRequires:  cmake3 cmake3-data
 %else
@@ -26,7 +28,7 @@ with RPM tools
 %setup -q 
 
 %build
-%if %{defined cmake3}
+%if %{defined __cmake3}
 # on CentOS7 we have to use:
 %cmake3
 %cmake3_build
@@ -37,7 +39,7 @@ with RPM tools
 
 %install
 
-%if %{defined cmake3}
+%if %{defined __cmake3}
 # on CentOS7 we have to use:
 %cmake3_install
 %else
