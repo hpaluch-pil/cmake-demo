@@ -15,7 +15,7 @@ For CentOS 7:
 - EPEL required
 
 ```bash
-sudo yum install cmake3 make gcc
+sudo yum install cmake3 cmake3-data make gcc
 ```
 
 And build under `~/tmp`:
@@ -44,6 +44,16 @@ tito build --rpm
 
 RPMS are created in folder `/tmp/tito` including `/tmp/tito/x86_64`.
 
+
+# NOTES
+
+Always validate spec file with:
+```bash
+# for CentOS 7
+rpmlint -i cmake-demo.spec
+# for Fedora 35
+rpmlint -v cmake-demo.spec
+```
 
 
 
