@@ -4,9 +4,7 @@
 *.bak
 *.tmp
 
-# build files
-clockres.o
-/clockres
+obj-*/
 
 # Debian build files
 *.log
@@ -14,7 +12,7 @@ clockres.o
 debian/debhelper-build-stamp
 debian/files
 /debian/.debhelper/
-/debian/clockres/
+/debian/cmake-demo/
 
 # RPM build files
 *.rpm

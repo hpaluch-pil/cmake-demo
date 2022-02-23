@@ -1,0 +1,17 @@
+Source: cmake-demo
+Section: utils
+Priority: optional
+Maintainer: Henryk Paluch <henryk.paluch@pickering.cz>
+Build-Depends: debhelper, cmake
+Standards-Version: 4.1.4
+Homepage: https://github.com/hpaluch-pil/cmake-demo
+
+Package: cmake-demo
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Demo how to build library with cmake
+  on Debian and CentOS. It is not so easy, because
+  each distribution uses different target Shared library
+  directory
+

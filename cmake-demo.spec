@@ -17,6 +17,8 @@ BuildRequires:  gcc make
 %if %{defined __cmake3}
 # on CentOS7 we have to use:
 BuildRequires:  cmake3 cmake3-data
+# force out-of-source builds on CentOS7
+%undefine __cmake3_in_source_build
 %else
 BuildRequires:  cmake >= 3.0
 %endif

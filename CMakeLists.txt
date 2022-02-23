@@ -10,8 +10,12 @@ project(cmake-demo VERSION 0.0.1 LANGUAGES C)
 # we always build shared libraries
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 
+set(MY_DEFAULT_LIB "lib")
+if(CMAKE_INSTALL_LIBDIR AND NOT LIB_INSTALL_DIR)
+	set(MY_DEFAULT_LIB "${CMAKE_INSTALL_LIBDIR}")
+endif()
 # this is overridden by RPM build on CentOS and Fedora
-set(LIB_INSTALL_DIR "lib" CACHE PATH "Default install dir for libraries.")
+set(LIB_INSTALL_DIR "${MY_DEFAULT_LIB}" CACHE PATH "Default install dir for libraries.")
 message("*** LIB_INSTALL_DIR='${LIB_INSTALL_DIR}'")
 
 # simplified boilerplate from CMake presentation
